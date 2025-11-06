@@ -1,0 +1,106 @@
+body {
+    background: url("{{ asset('fondo-login4.jpg') }}") no-repeat center center
+        fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    z-index: -1;
+}
+
+.form {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 25px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
+
+    /* Animación 3D */
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transform: rotateX(-10deg);
+    animation: form-animation 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes form-animation {
+    from {
+        transform: rotateX(-30deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+.input {
+    padding: 11px;
+    border-radius: 6px;
+    background-color: transparent !important;
+    border: 2px solid #ffffff;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: 0.3s;
+}
+
+.input::placeholder {
+    color: #e8e8e8;
+}
+
+.input:hover,
+.input:focus {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-color: #3b8df2;
+    transform: scale(1.05) rotateY(20deg);
+    outline: none;
+}
+
+button {
+    padding: 11px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #0077be, #3b8df2);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    transform-style: preserve-3d;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+button:hover {
+    transform: scale(1.06) rotateY(20deg) rotateX(10deg);
+    background: linear-gradient(90deg, #3b8df2, #0077be);
+}
+
+.text-center a {
+    color: #82c7ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.text-center a:hover {
+    text-decoration: underline;
+}
